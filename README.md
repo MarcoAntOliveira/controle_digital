@@ -20,7 +20,7 @@ desejado;
 
 ### Visão Geral de um sistema de controle digital
 
-![alt text](image.png)
+![alt text](images/image.png)
 
  ### E8
  **Quase nunca a taxa de amostragem de um sistema de controle digital (no máximo de algumas centenas de Hz) será da mesma ordem do clock do respectivo sistema microprocessado (de milhões a bilhões de Hz). Por que?**
@@ -42,12 +42,31 @@ Executar um sistema de controle com uma taxa de amostragem muito alta aumentaria
 
 Conclusão
 A taxa de amostragem de um sistema de controle digital é projetada para ser compatível com a dinâmica do sistema físico controlado, enquanto a frequência de clock do microprocessador é otimizada para processamento eficiente e rápido de múltiplas tarefas. Como resultado, a taxa de amostragem de controle geralmente é de algumas centenas de Hz, enquanto o clock do processador está na faixa de MHz a GHz.
-
+---
 
 ### E12
-![alt text](image.png)
+![alt text](images/image.png)
 
-![alt text](image-1.png)<br>
+![alt text](images/image-1.png)<br>
  Aparentemente o amostrador que é conversor analogico digital esta depois do somador
+--
 
+ ### Amostrador Ideal
+ $$
+ r^*(t) = \sum_{k=0}^{\infty} r(kT_S)\, \delta(t - kT_S)
+ $$
+
+
+### Retentor de ordem Zero (ZOH)
+$$
+p(t, T_S) = u(t) - u(t - T_S)
+$$
+
+$$
+ZOH(s) = \mathcal{L}\{p(t, T_S)\} = \mathcal{L}\{u(t) - u(t - T_S)\}
+$$
+
+$$
+ZOH(s) = \frac{1}{s} - \frac{e^{-T_S s}}{s} = \frac{1 - e^{-T_S s}}{s}
+$$
 

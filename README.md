@@ -152,8 +152,7 @@ $$
 ```mermaid
 graph LR
     E["E(s)"] --> D["D(z)"]
-    D --> ZOH["ZOH"]
-    ZOH --> GP["Gp(s)"]
+    D --> GP["ZOH|Gp(s)"]
     GP --> C["C(s)"]
 ```
 $$

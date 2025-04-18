@@ -55,7 +55,7 @@ A taxa de amostragem de um sistema de controle digital é projetada para ser com
 ### E12
 ```mermaid
 graph LR
-    R["r(t)"] --> S1["+"]
+    R["r(t)"] --> S1[+]
     S1 --> ADC["ADC"]
     ADC --> C["Controlador"]
     C --> DAC["DAC"]

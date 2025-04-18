@@ -22,13 +22,12 @@ desejado;
 
 ```mermaid
 graph LR
-    R["r(t)"] --> S1("+")
+    R["r(t)"] --> S1["+"]
     S1 --> C["Controlador"]
     C --> P["Planta"]
     P --> Y["y(t)"]
     Y --> S["Sensor"]
     S --> S1
-    style S1 circle
 ```
 
 ### E8
@@ -56,7 +55,7 @@ A taxa de amostragem de um sistema de controle digital é projetada para ser com
 ### E12
 ```mermaid
 graph LR
-    R["r(t)"] --> S1(("+"))
+    R["r(t)"] --> S1["+"]
     S1 --> ADC["ADC"]
     ADC --> C["Controlador"]
     C --> DAC["DAC"]
@@ -64,7 +63,6 @@ graph LR
     P --> Y["y(t)"]
     Y --> S["Sensor"]
     S --> S1
-    style S1 circle
 ```
 
 Aparentemente o amostrador que é conversor analógico digital está depois do somador

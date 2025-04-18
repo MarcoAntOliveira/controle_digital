@@ -88,4 +88,45 @@ $$
 R^*(s) = \sum_{\text{nos polos de } R(\lambda)} \operatorname{Res} \left\{ R(\lambda) \cdot \frac{1}{1 - e^{-T_S(s - \lambda)}} \right\}
 $$
 
+### Configurações de Sistemas e Funções de Transferência
+
+#### (a) Sistema com Amostragem em Cascata
+```mermaid
+graph LR
+    E[E(s)] -->|T| G1[G₁(s)] -->|T| G2[G₂(s)] --> C[C(s)]
+```
+$$
+C(z) = G_1(z)G_2(z)E(z)
+$$
+
+#### (b) Sistema com Amostragem Única
+```mermaid
+graph LR
+    E[E(s)] -->|T| G1[G₁(s)] --> G2[G₂(s)] --> C[C(s)]
+```
+$$
+C(z) = \mathcal{Z}\{G_1(s)G_2(s)\}E(z)
+$$
+
+#### (c) Sistema com Amostragem Intermediária
+```mermaid
+graph LR
+    E[E(s)] --> G1[G₁(s)] -->|T| A[A*(s)] --> G2[G₂(s)] --> C[C(s)]
+```
+$$
+C(s) = G_2(s)A^*(s)
+$$
+$$
+C(z) = G_2(z)\mathcal{Z}\{G_1(s)E(s)\}
+$$
+
+#### (d) Sistema com ZOH
+```mermaid
+graph LR
+    E[E(s)] -->|T| D[D(z)] --> ZOH[1-e⁻ᵀˢ/s] --> Gp[Gp(s)] --> C[C(s)]
+```
+$$
+C(z) = E(z)D(z)\left(\frac{z-1}{z}\right)\mathcal{Z}\left\{\frac{G_p(s)}{s}\right\}
+$$
+
 

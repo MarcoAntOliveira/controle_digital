@@ -22,7 +22,7 @@ desejado;
 
 ```mermaid
 graph LR
-    R["r(t)"] --> S1(("+"))
+    R["r(t)"] --> S1("+")
     S1 --> C["Controlador"]
     C --> P["Planta"]
     P --> Y["y(t)"]

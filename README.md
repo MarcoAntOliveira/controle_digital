@@ -103,7 +103,7 @@ $$
 
 #### Formula Fechada
 $$
-R^*(s) = \sum_{\text{nos polos de } R(\lambda)} {Res} \left\{ R(\lambda) \cdot \frac{1}{1 - e^{-T_S(s - \lambda)}} \right\}
+R^*(s) = \sum_{\text{nos polos de } R(\lambda)} \text{Res} \{ R(\lambda) \cdot \frac{1}{1 - e^{-T_S(s - \lambda)}} \}
 $$
 
 ### Configurações de Sistemas e Funções de Transferência
@@ -154,7 +154,7 @@ graph LR
     GP --> C["C(s)"]
 ```
 $$
-C(z) = E(z)D(z)\left(\frac{z-1}{z}\right)\mathcal{Z}\left\{\frac{G_p(s)}{s}\right\}
+C(z) = E(z)D(z)(\frac{z-1}{z})\mathcal{Z}\{\frac{G_p(s)}{s}\}
 $$
 
 ### Atraso de tempo nos sistemas contínuos

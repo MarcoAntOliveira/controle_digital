@@ -77,24 +77,29 @@ Aparentemente o amostrador que é conversor analógico digital está depois do s
 **Note:** Para cada intervalo de amostragem, a saída do ZOH é dada pelo sinal amostrado no tempo kTs (r(kTs)), multiplicado pelo sinal pulso unitário de duração Ts:
 
 $$
-p(t,T_s) = \begin{cases}
-0, & t < 0 \\
-1, & 0 \leq t \leq T_s \\
-0, & t > T_s
+p(t,T_s) =
+\begin{cases}
+0, & \text{para } t < 0 \\
+1, & \text{para } 0 \leq t \leq T_s \\
+0, & \text{para } t > T_s
 \end{cases}
 $$
- Em que o degrau unitario pode ser escrito como a subtração de dois degraus unitários
+
+Em que o degrau unitário pode ser escrito como a subtração de dois degraus unitários:
 $$
 p(t, T_S) = u(t) - u(t - T_S)
 $$
-Aplicando  A trasnformada de Laplace.
+
+Aplicando a transformada de Laplace:
 $$
 ZOH(s) = \mathcal{L}\{p(t, T_S)\} = \mathcal{L}\{u(t) - u(t - T_S)\}
 $$
+
 $$
 ZOH(s) = \frac{1}{s} - \frac{e^{-T_S s}}{s} = \frac{1 - e^{-T_S s}}{s}
 $$
-fazendo  s = $ \omega $ j  , sendoo equivalente da transformada de fourier
+
+Fazendo $s = j\omega$, sendo o equivalente da transformada de Fourier:
 
 No domínio da frequência:
 $$

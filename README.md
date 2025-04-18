@@ -154,7 +154,7 @@ graph LR
     E["E(s)"] --> D["D(z)"]
     D --> GP["ZOH|Gp(s)"]
     GP --> C["C(s)"]
-    C -> E
+    C --> E
 ```
 $$
 C(z) = E(z)D(z)(\frac{z-1}{z})\mathcal{Z}\{\frac{G_p(s)}{s}\}

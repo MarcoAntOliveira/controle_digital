@@ -20,9 +20,18 @@ desejado;
 
 ### Visão Geral de um sistema de controle digital
 
-![alt text](images/image.png)
+```mermaid
+graph LR
+    R["r(t)"] --> S1(("+"))
+    S1 --> C["Controlador"]
+    C --> P["Planta"]
+    P --> Y["y(t)"]
+    Y --> S["Sensor"]
+    S --> S1
+    style S1 circle
+```
 
- ### E8
+### E8
  **Quase nunca a taxa de amostragem de um sistema de controle digital (no máximo de algumas centenas de Hz) será da mesma ordem do clock do respectivo sistema microprocessado (de milhões a bilhões de Hz). Por que?**
 
 
@@ -45,13 +54,22 @@ A taxa de amostragem de um sistema de controle digital é projetada para ser com
 ---
 
 ### E12
-![alt text](images/image.png)
+```mermaid
+graph LR
+    R["r(t)"] --> S1(("+"))
+    S1 --> ADC["ADC"]
+    ADC --> C["Controlador"]
+    C --> DAC["DAC"]
+    DAC --> P["Planta"]
+    P --> Y["y(t)"]
+    Y --> S["Sensor"]
+    S --> S1
+    style S1 circle
+```
 
-![alt text](images/image-1.png)<br>
- Aparentemente o amostrador que é conversor analogico digital esta depois do somador
---
+Aparentemente o amostrador que é conversor analógico digital está depois do somador
 
- ### Amostrador Ideal
+### Amostrador Ideal
  $$r^*(t) = \sum_{k=0}^{\infty} r(kT_S)\, \delta(t - kT_S)$$
 
 
@@ -85,7 +103,7 @@ $$
 
 #### Formula Fechada
 $$
-R^*(s) = \sum_{\text{nos polos de } R(\lambda)} \operatorname{Res} \left\{ R(\lambda) \cdot \frac{1}{1 - e^{-T_S(s - \lambda)}} \right\}
+R^*(s) = \sum_{\text{nos polos de } R(\lambda)} {Res} \left\{ R(\lambda) \cdot \frac{1}{1 - e^{-T_S(s - \lambda)}} \right\}
 $$
 
 ### Configurações de Sistemas e Funções de Transferência
@@ -138,5 +156,23 @@ graph LR
 $$
 C(z) = E(z)D(z)\left(\frac{z-1}{z}\right)\mathcal{Z}\left\{\frac{G_p(s)}{s}\right\}
 $$
+
+### Atraso de tempo nos sistemas contínuos
+
+Em um sistema contínuo com atraso, a medição obtida no tempo atual $t_0$ ($y(t = t_0)$) é resultante de uma entrada aplicada em um instante de tempo $T_a$ anterior ($u(t = t_0 - T_a)$).
+
+Matematicamente, no instante atual $t$, temos $u(t)$ e $y(t - T_a)$. Aplicando o teorema da translação real de Laplace, temos:
+
+$$
+\mathcal{L}\{y(t-T_a)u(t-T_a)\} = e^{-T_as}Y(s)
+$$
+
+Então, um sistema contínuo com atraso de tempo é escrito como:
+
+$$
+\frac{Y(s)}{U(s)} = G(s)e^{-T_as}
+$$
+
+onde $G(s)$ é a função de transferência que define a física do processo e $T_a$ é o atraso de transporte do sistema.
 
 

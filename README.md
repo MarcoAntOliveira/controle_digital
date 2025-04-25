@@ -178,4 +178,185 @@ $$
 
 onde $G(s)$ é a função de transferência que define a física do processo e $T_a$ é o atraso de transporte do sistema.
 
+## Mapeamento do plano s no plano z
+
+### Relembrando alguns fatos
+
+- Já sabemos que a relação entre as variáveis s e z se faz pela fórmula:
+$$
+z = e^{sT_s}
+$$
+
+- Sabemos também da propriedade de periodicidade da amostragem que basta considerar a região do plano s limitada por $\omega = \pm\omega_s/2$. Os polos que aparecem nesta região são replicados fora desta faixa.
+
+- Por fim, sabemos que a relação unívoca entre os planos s e z só é válida para os polos; Nada pode ser afirmado com relação aos zeros.
+
+### Mapeando o eixo imaginário
+
+Primeiro, note que:
+$$
+z = e^{sT_s} = e^{(\sigma+j\omega)T_s}
+$$
+
+Mas $\sigma = 0$ sobre o eixo imaginário, então:
+$$
+z = e^{j\omega T_s} = \cos(\omega T_s) + j\sen(\omega T_s) = 1\angle\omega T_s
+$$
+
+Portanto, o eixo imaginário no plano s (restrito na faixa $-\omega_s/2 \leq \omega \leq \omega_s/2$) é visto como o círculo unitário no plano z.
+
+### Mapeando os limites da faixa primária
+
+Se há um polo exatamente sobre uma das faixas primárias:
+$$
+z = e^{\sigma T_s\pm j\omega_s/2}
+$$
+
+Mas $\omega_s = 2\pi/T_s$, então $T_s\omega_s/2 = \pi$
+
+Então:
+$$
+z = e^{\sigma T_s}\angle\pi
+$$
+
+Como $\sigma < 0$, um polo sobre um dos limites da faixa primária será mapeado sobre o eixo real esquerdo do plano z com parte real menor que 1.
+
+### Mapeando um eixo vertical paralelo ao eixo imaginário
+
+Tomemos agora um polo sobre um eixo vertical no plano s, paralelo ao eixo imaginário. Neste caso:
+$$
+z = e^{\sigma_1 T_s}e^{j\omega T_s}
+$$
+para algum $\sigma_1 \in \mathbb{R}$ com $-\omega_s/2 \leq \omega \leq \omega_s/2$
+
+Então:
+$$
+z = e^{\sigma_1 T_s}\angle\omega T_s
+$$
+
+Ou seja, um eixo vertical no plano s é mapeado como um círculo no plano z. Se $\sigma_1 < 0$, este círculo tem raio menor que 1. Se $\sigma_1 > 0$, este círculo tem raio maior que 1.
+
+### Estabilidade no plano z
+
+Note que um polo instável no plano s ($\sigma_1 > 0$) será mapeado fora do círculo unitário no plano z, enquanto um polo estável no plano s ($\sigma_1 < 0$) será mapeado dentro do círculo unitário no plano z.
+
+**Propriedade (Estabilidade)**: O círculo unitário delimita a região de estabilidade de polos no plano z. Se um polo neste plano estiver no interior do círculo unitário, este polo será estável. Se um polo neste plano estiver no exterior do círculo unitário, este polo será instável.
+
+### Mapeando um eixo horizontal paralelo ao eixo real
+
+Tomemos agora um polo sobre um eixo horizontal no plano s, paralelo ao eixo real. Neste caso:
+$$
+z = e^{\sigma T_s}e^{j\omega_1 T_s}
+$$
+para algum $-\omega_s/2 \leq \omega_1 \leq \omega_s/2$ e $\sigma \in \mathbb{R}$ com $-\infty < \sigma < \infty$
+
+Então:
+$$
+z = e^{\sigma T_s}\angle\omega_1 T_s
+$$
+
+Isso equivale a um eixo-vetor no plano z, partindo de sua origem, com módulo $e^{\sigma T_s}$ e ângulo $\omega_1 T_s$.
+
+### Mapeando um eixo-vetor
+
+Por fim, considere um eixo-vetor no plano s, partindo de sua origem, com amplitude $\sigma_1$ e ângulo $\beta$. Neste caso:
+$$
+\frac{\omega}{\sigma_1} = \text{tg}(\beta)
+$$
+
+Então:
+$$
+z = e^{sT_s} = e^{\sigma_1 T_s}\angle\sigma_1 T_s\text{tg}(\beta)
+$$
+que é uma espiral logarítmica decrescente com o aumento de $\sigma_1$, $\sigma_1 < 0$.
+
+## Transformação Bilinear
+
+### Aproximação de $e^{sT_s}$
+
+Já vimos que a relação entre os domínios s e z se faz através da relação:
+$$
+z = e^{sT_s}
+$$
+
+A fórmula acima, entretanto não é útil quando estamos interessados em obter computacionalmente H(z) via uma expressão em H(s). O motivo é que $e^{sT_s}$ não é uma forma computacional fechada, e seu cálculo exige a solução de uma série infinita.
+
+### Aproximação de Padé
+
+Poderíamos usar a aproximação de Taylor para a exponencial. Entretanto, para funções complexas com polos e zeros, a aproximação de Padé fornece melhores resultados.
+
+Assim, aproximamos:
+$$
+e^{-x} \approx \frac{1-\frac{x}{2}+\frac{x^2}{8}-\frac{x^3}{48}+\cdots}{1+\frac{x}{2}+\frac{x^2}{8}+\frac{x^3}{48}+\cdots}
+$$
+
+Se truncarmos a série em seu segundo termo, chegamos à aproximação de Padé de primeira ordem.
+
+### Atraso de tempo em s
+
+A primeira aplicação da aproximação de Padé é na expressão de um sistema contínuo com atraso de tempo. Por exemplo, o sistema:
+$$
+G(s) = \frac{2e^{-T_0s}}{s+2}
+$$
+
+pode ser aproximado como:
+$$
+G(s) \approx \frac{2}{s+2} \cdot \frac{1-(T_0/2)s}{1+(T_0/2)s}
+$$
+
+Note que esta aproximação implica em introdução de um polo estável adicional, mais um zero no semiplano direito de s.
+
+### Análise da variável z
+
+Se aplicarmos a aproximação de Padé de primeira ordem à variável z, notamos facilmente que:
+$$
+z = e^{sT_s} \approx \frac{2+T_ss}{2-T_ss}
+$$
+
+Se isolarmos a variável s, temos:
+$$
+s \approx \frac{2(z-1)}{T_s(z+1)}
+$$
+
+### Transformação bilinear
+
+Ao par de relações:
+$$
+z \approx \frac{2+T_ss}{2-T_ss}, \quad s \approx \frac{2(z-1)}{T_sz+1}
+$$
+
+damos o nome de transformação bilinear entre as variáveis s e z.
+
+Obviamente, esta transformação estabelece uma relação aproximada entre funções de transferência em s e z. Entretanto, se o tempo de amostragem adotado for suficientemente baixo face às dinâmicas envolvidas, esta aproximação pode ser bastante precisa.
+
+### Exemplo de Transformação bilinear
+
+Seja:
+$$
+G(s) = \frac{2}{s+2}
+$$
+
+Usando a transformação bilinear com $T_s = 0.01s$, temos:
+$$
+G(z) = \frac{2(z+1)}{202z-198}
+$$
+
+Note que agora, como estamos aproximando explicitamente o termo $e^{sT_s}$, não devemos incluir a ação do ZOH.
+
+### Mapeamento bilinear
+
+Para evitar confusão, vamos definir uma nova variável w, tal que:
+$$
+z = \frac{2+T_sw}{2-T_sw}, \quad w = \frac{2(z-1)}{T_sz+1}
+$$
+
+O que faremos é associar os diversos valores de z no seu plano aos possíveis valores de w.
+
+### Consequências do mapeamento bilinear
+
+- Já concluímos que o mapeamento da faixa primária do plano s se faz como um disco unitário no plano z;
+- Acabamos de ver que a transformação bilinear mapeia o disco unitário no plano z como o semiplano esquerdo no plano w;
+- Isso tem um impacto muito importante no projeto de controladores digitais: se o fizermos no plano w, poderemos utilizar todas as técnicas do controle clássico analógico que já aprendemos em Introdução ao Controle;
+- Isso ocorre porque todas aquelas técnicas se baseiam nas características no plano s, características essas "reconstituídas" no plano w, via transformação bilinear.
+
 

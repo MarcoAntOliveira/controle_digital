@@ -15,6 +15,7 @@ kanban-plugin: board
 - [ ] Atraso tempo para sistemas contínuos [[EMB_5602_PI.pdf#page=151&selection=2,0,2,38|EMB_5602_PI, página 151]]
 - [ ] Procedimento Geral para derivação [[EMB_5602_PI.pdf#page=160&selection=0,24,2,31|EMB_5602_PI, página 160]]
 - [ ] Equação caracteristica obtenção [[EMB_5602_PI.pdf#page=160&selection=0,24,2,31|EMB_5602_PI, página 160]]
+- [ ] obtenção da inversa por frações parciais - polos repetidos [[EMB_5602_PI.pdf#page=58&selection=4,32,4,44|EMB_5602_PI, página 58]]
 
 
 ## Questoes P1
@@ -28,10 +29,15 @@ kanban-plugin: board
 - [ ] E.37 [[EMB_5602_PI.pdf#page=165&selection=6,10,23,1|EMB_5602_PI, página 165]]
 
 
+## Respostas
+
+- [ ] [[EMB_5602_PI.pdf#page=204&selection=4,8,21,0|EMB_5602_PI, página 204]]
+
+
 
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false]}
 ```
 %%

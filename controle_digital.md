@@ -16,6 +16,7 @@ kanban-plugin: board
 - [ ] Procedimento Geral para derivação [[EMB_5602_PI.pdf#page=160&selection=0,24,2,31|EMB_5602_PI, página 160]]
 - [ ] Equação caracteristica obtenção [[EMB_5602_PI.pdf#page=160&selection=0,24,2,31|EMB_5602_PI, página 160]]
 - [ ] obtenção da inversa por frações parciais - polos repetidos [[EMB_5602_PI.pdf#page=58&selection=4,32,4,44|EMB_5602_PI, página 58]]
+- [ ] Mapeamento no plano Z [[EMB_5602_PI.pdf#page=178&selection=2,16,2,26|EMB_5602_PI, página 178]]
 
 
 ## Questoes P1

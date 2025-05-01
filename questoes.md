@@ -53,6 +53,9 @@ $$
 ![[images/Pasted image 20250430104249.png]]
 
 $$T_s\geq 5ms$$ O valor da banda passante é dado por:
-$$70 Hz$$ que para a taxa de amostragem fica com 
+$$70 Hz$$ que para a frequencia maxima seria dada pela frequencia da banda passante que  fica como:
 $$ T = \frac{1}{70} = 14ms$$
-o ajuste seria fazer $T_s = 1/103 = 9.71ms$ 
+E a taxa de amostagem seria dada por $T_s = 1/103 = 9.71ms$. Pelo teorema de Shannon temos que :
+$$T_s\geq2T $$
+$$T_S> 2*14 = 28ms$$
+o que fere o teorema de shanon

@@ -17,6 +17,7 @@ kanban-plugin: board
 - [ ] Equação caracteristica obtenção [[EMB_5602_PI.pdf#page=160&selection=0,24,2,31|EMB_5602_PI, página 160]]
 - [ ] obtenção da inversa por frações parciais - polos repetidos [[EMB_5602_PI.pdf#page=58&selection=4,32,4,44|EMB_5602_PI, página 58]]
 - [ ] Mapeamento no plano Z [[EMB_5602_PI.pdf#page=178&selection=2,16,2,26|EMB_5602_PI, página 178]]
+- [ ] Revisão malha aberta [[EMB_5602_PI.pdf#page=154&selection=0,24,2,23|EMB_5602_PI, página 154]]
 
 
 ## Questoes P1
@@ -28,6 +29,7 @@ kanban-plugin: board
 - [ ] E.35 [[EMB_5602_PI.pdf#page=146&selection=6,0,6,22|EMB_5602_PI, página 146]]
 - [ ] E.36 [[EMB_5602_PI.pdf#page=153&selection=6,0,6,9|EMB_5602_PI, página 153]]
 - [ ] E.37 [[EMB_5602_PI.pdf#page=165&selection=6,10,23,1|EMB_5602_PI, página 165]]
+- [ ] E.40 [[EMB_5602_PI.pdf#page=201&selection=6,0,6,35|EMB_5602_PI, página 201]]
 
 
 ## Respostas
@@ -35,10 +37,17 @@ kanban-plugin: board
 - [ ] [[EMB_5602_PI.pdf#page=204&selection=4,8,21,0|EMB_5602_PI, página 204]]
 
 
+## Sistemas de controle
+
+- [ ] [[EMB_5641.pdf#page=132&selection=2,2,5,16|EMB_5641, página 132]] Sistemas de 2 ordem
+- [ ] [[EMB_5641.pdf#page=119&selection=2,0,5,16|EMB_5641, página 119]] Sistema de primeira ordem
+- [ ] [[EMB_5641.pdf#page=267&selection=0,31,2,26|EMB_5641, página 267]]lugar das Raizes
+
+
 
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false]}
 ```
 %%
